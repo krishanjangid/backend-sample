@@ -1,0 +1,9 @@
+{
+    "development": {
+      "username": "myuser",
+      "password": "Aakash@123",
+      "database": "mydataaakash",
+      "host": "uc51.udtichidya.com",
+      "dialect": "mysql"
+    }
+}
