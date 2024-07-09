@@ -10,8 +10,20 @@ const sequelize = new Sequelize(
   process.env.DB_PASS,
   {
     host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    dialect: 'mysql',
+    dialect: 'mssql',
+    port: process.env.DB_PORT || 1433,
+    dialectOptions: {
+      options: {
+        encrypt: true, // Use encryption
+        enableArithAbort: true,
+      },
+    },
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000,
+    },
   }
 );
 
